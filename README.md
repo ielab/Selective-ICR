@@ -9,7 +9,7 @@ This work investigates how relevance signals are distributed across transformer 
 1. **Layer-wise Analysis**: Discovering a universal "Bell-Curve" distribution of relevance signals across transformer layers
 2. **Selective-ICR**: A strategy that reduces inference latency by 30%-50% without compromising effectiveness by focusing on high-signal layers
 3. **Unified Comparison**: Systematic evaluation of three scoring mechanisms (generation, likelihood, internal attention) across Listwise and Setwise ranking frameworks
-4. **BRIGHT Benchmark**: Demonstrating that attention-based scoring enables small models (0.6B) to outperform GPT-4-based generative re-rankers
+4. **Reasoning-Intensive Tasks**: Demonstrating that attention-based re-ranking has high potential on reasoning-intensive tasks
 
 ## Repository Structure
 
@@ -19,7 +19,6 @@ This codebase reproduces two main components:
 - **Original repo**: [OSU-NLP-Group/In-Context-Reranking](https://github.com/OSU-NLP-Group/In-Context-Reranking)
 - **Original paper**: [Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers](https://arxiv.org/abs/2410.02642)
 - **Features**:
-  - Implements ICR method using internal attention signals
   - Supports layer-wise analysis and per-layer evaluation
   - Implements Selective-ICR strategy (layer selection and aggregation)
   - Evaluates on TREC DL, BEIR, and BRIGHT datasets
@@ -28,7 +27,7 @@ This codebase reproduces two main components:
 - **Original repo**: [ielab/llm-rankers](https://github.com/ielab/llm-rankers)
 - **Original paper**: [A Setwise Approach for Effective and Highly Efficient Zero-shot Ranking with Large Language Models](https://arxiv.org/pdf/2310.09497.pdf)
 - **Features**:
-  - Implements Pointwise, Listwise, Pairwise, and Setwise ranking methods
+  - Supports Listwise and Setwise ranking methods using Llama3.1-8B
   - Supports three scoring mechanisms: `generation`, `likelihood`, and `attention` (using ICR)
   - Enables unified comparison of different scoring strategies under consistent conditions
   - Evaluates on BEIR datasets
@@ -42,7 +41,7 @@ This codebase reproduces two main components:
 ## Quick Start
 
 See individual README files for detailed installation and usage:
-- [`icr/README.md`](icr/README.md) - ICR implementation and experiments
+- [`icr/README.md`](icr/README.md) - Selective-ICR implementation and experiments
 - [`llm-rankers/README.md`](llm-rankers/README.md) - Ranking methods and scoring comparison
 
 ## Citation

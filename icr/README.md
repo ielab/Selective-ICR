@@ -86,16 +86,5 @@ bash run_batch_icr.sh
 - `--save_retrieval_results`: Save retrieval results to JSON
 - `--per_layer_analysis`: Compute metrics for each layer separately
 
-## Citation
-If you find this work helpful, please consider citing our paper:
-```
-@misc{chen2024attentionlargelanguagemodels,
-      title={Attention in Large Language Models Yields Efficient Zero-Shot Re-Rankers}, 
-      author={Shijie Chen and Bernal Jiménez Gutiérrez and Yu Su},
-      year={2024},
-      eprint={2410.02642},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2410.02642}, 
-}
-```
+## Acknowledgments
+We thank the authors of the original repositories for their [valuable work](https://github.com/OSU-NLP-Group/In-Context-Reranking).
