@@ -7,7 +7,7 @@ This repository contains reproduction code for paper: **"Where Relevance Emerges
 This work investigates how relevance signals are distributed across transformer layers in Large Language Models (LLMs) for zero-shot document re-ranking. The main contributions include:
 
 1. **Layer-wise Analysis**: Discovering a universal "Bell-Curve" distribution of relevance signals across transformer layers
-2. **Trimmed-ICR**: A strategy that reduces inference latency by 30%-50% without compromising effectiveness by focusing on high-signal layers
+2. **Selective-ICR**: A strategy that reduces inference latency by 30%-50% without compromising effectiveness by focusing on high-signal layers
 3. **Unified Comparison**: Systematic evaluation of three scoring mechanisms (generation, likelihood, internal attention) across Listwise and Setwise ranking frameworks
 4. **BRIGHT Benchmark**: Demonstrating that attention-based scoring enables small models (0.6B) to outperform GPT-4-based generative re-rankers
 
@@ -21,7 +21,7 @@ This codebase reproduces two main components:
 - **Features**:
   - Implements ICR method using internal attention signals
   - Supports layer-wise analysis and per-layer evaluation
-  - Implements Trimmed-ICR strategy (layer selection and aggregation)
+  - Implements Selective-ICR strategy (layer selection and aggregation)
   - Evaluates on TREC DL, BEIR, and BRIGHT datasets
 
 ### 2. `llm-rankers/` - LLM-based Ranking Methods
