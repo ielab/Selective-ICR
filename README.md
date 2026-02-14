@@ -44,6 +44,8 @@ See individual README files for detailed installation and usage:
 - [`icr/README.md`](icr/README.md) - Selective-ICR implementation and experiments
 - [`llm-rankers/README.md`](llm-rankers/README.md) - Ranking methods and scoring comparison
 
+## Experiment Results:
+download from google drive: https://drive.google.com/file/d/1Myurx_3DsnBcSq6Em9pb0Y2k_iXX5sV7/view?usp=drive_link
 ## Citation
 
 If you use this code, please cite the original papers:
