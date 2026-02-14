@@ -35,7 +35,7 @@ You can either generate retrieval results yourself or download pre-computed resu
 - Results will be stored in `retriever_outpout/` with format `icr_{type}_{dataset}_{retriever}_top_{k}.json`
 
 **Option 2: Download pre-computed results**
-- Download retrieval results from [Google Drive](https://drive.google.com/file/d/1jleC9MeUkSl2MN6OG1rTzze-dFA8KMDV/view) and put them in `retriever_outpout/`
+- Download retrieval results from [Google Drive](https://drive.google.com/file/d/1qWrLyrKertMbmIPdaqITrjZIW3wrQO7P/view?usp=sharing) and put them in `retriever_outpout/`
 
 ### Custom dataset
 Process your own data into the following json format:
