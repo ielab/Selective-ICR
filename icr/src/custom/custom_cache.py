@@ -32,8 +32,8 @@ class DynamicCacheWithQuery(DynamicCache):
         layer_idx: int,
         cache_kwargs: Optional[Dict[str, Any]] = None,
     ) -> Tuple[torch.Tensor, torch.Tensor]:
-        if layer_idx == 0:
-            self._seen_tokens += key_states.shape[-2]
+        # if layer_idx == 0:
+        #     self._seen_tokens += key_states.shape[-2]
         updated_key, updated_value = super().update(key_states, value_states, layer_idx)
         if query_states is not None:
             if len(self.query_cache) <= layer_idx:
