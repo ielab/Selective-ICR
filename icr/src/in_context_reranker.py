@@ -578,7 +578,7 @@ class InContextReranker():
                                                return_per_layer_scores=return_per_layer_scores)
             doc_scores_query = query_result[0]
             perdoc_result = query_result[1]
-            idx = 2  # 跳过 doc_scores 和 perdoc_result
+            idx = 2
             doc_scores_query_per_layer = query_result[idx] if return_per_layer_scores else None
             query_per_layer_tok_results = None
             if return_per_layer_scores:
@@ -788,7 +788,8 @@ class InContextReranker():
                 llm_prompt += self.prompt_separator + instruction_prompt 
                 prompt_length += separator_length
                 prompt_length += self.tokenizer(self.prompt_separator + instruction_prompt, return_tensors='pt').input_ids.size(1) - self.prompt_bos_length - separator_length - self.additional_prompt_offset
-                query_start_idx = prompt_length
+                if not any(x in self._base_llm_name.lower() for x in ['llama', 'mistral']):
+                    query_start_idx = prompt_length
                 
             else:
                 llm_prompt += self.prompt_separator
@@ -810,7 +811,11 @@ class InContextReranker():
         if query_position == 'last':
             query_prompt_with_suffix_length = self.tokenizer(query_prompt, return_tensors='pt').input_ids.size(1) - self.prompt_bos_length - self.additional_prompt_offset
             suffix_length = query_prompt_with_suffix_length - query_text_length
-            query_end_idx = query_start_idx + query_text_length - 1
+            if not any(x in self._base_llm_name.lower() for x in ['llama', 'mistral']):
+                query_end_idx = query_start_idx + query_text_length - 1
+            else:
+                query_end_idx = prompt_length - 1
+            
         
         # if self.use_double_query and query1_start_idx is not None:
         #     query1_display = query1 if query1 is not None else query
